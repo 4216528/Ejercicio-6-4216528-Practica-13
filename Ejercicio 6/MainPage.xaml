@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="Ejercicio_6.MainPage">
+
+    <!-- En este código se evalua la propiedad del isfocaused del Entry, si el valor es verdadero será (true) el color de texto del Entry cambiará, al igual que el tamaño -->
+
+    <StackLayout>
+
+        <StackLayout.Resources>
+
+            <ResourceDictionary>
+
+                <Style x:Key="MyEntryStyle" TargetType="Entry">
+
+                    <Style.Triggers>
+
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                            <Setter Property="TextColor" Value="Red" />
+
+                            <Setter Property="FontSize" Value="30" />
+
+                        </Trigger>
+
+                    </Style.Triggers>
+
+                </Style>
+                
+            </ResourceDictionary>
+            
+        </StackLayout.Resources>
+
+        <Entry  Style="{StaticResource MyEntryStyle}" Text="Libro Aplicaciones"/>
+
+        <Entry  Style="{StaticResource MyEntryStyle}" Text="Negocio con"/>
+
+        <Entry  Style="{StaticResource MyEntryStyle}" Text="Xamarin.Forms"/>
+
+    </StackLayout>
+    
+</ContentPage>
